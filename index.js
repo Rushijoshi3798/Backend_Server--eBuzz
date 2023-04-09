@@ -29,6 +29,10 @@ app.use(cors());
 //     cookie: { secure: false }
 // }));
 
+app.get("/", (req,res) => {
+    res.send("HOME PAGE");
+})
+
 app.use("/user",userRoute);
 app.use("/admin", adminRoute);
 app.use(authorise);
