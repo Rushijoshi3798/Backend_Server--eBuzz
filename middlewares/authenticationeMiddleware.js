@@ -13,7 +13,9 @@ const authorise = (req,res,next) =>{
             const decoded = jwt.verify(token,"key");
             console.log(decoded.userId,"from middleware");
             req.body.userId = decoded.userId;
+            console.log("next is next");
             next();
+            console.log("next was done");
         }
         catch(err){
             res.status(401).send({success:false,message:'not authorise,please login first decoded'});

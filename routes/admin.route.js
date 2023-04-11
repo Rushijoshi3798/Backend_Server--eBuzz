@@ -53,7 +53,7 @@ adminRoute.post("/login",async(req,res)=>{
                 // console.log("login",findUser._id);
                 // console.log(token);
                 // req.session.token=token
-                res.status(200).send({success:true,message:'Admin login successfull',token:token})
+                res.status(200).send({success:true,message:'Admin login successfull',token:token, data: findUser})
                }else{
                 
                 res.status(401).send({success:false,message:"wrong credentils"});

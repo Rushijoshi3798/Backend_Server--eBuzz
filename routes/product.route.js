@@ -40,6 +40,7 @@ productRoute.post("/add", async (req, res) => {
       rating: Math.floor(Math.random() * 5) + 1,
       rating_count: Math.floor(Math.random() * 50) + 5,
     });
+    console.log("Addproduct",AddProduct);
     const saveProduct = await AddProduct.save();
     res.status(200).send({
       success: true,
@@ -47,7 +48,7 @@ productRoute.post("/add", async (req, res) => {
       data: saveProduct,
     });
   } catch (err) {
-    res.status(400).send({ success: false, message: err });
+    res.status(400).send({ success: false, message: "adfaff",err });
   }
 });
 
