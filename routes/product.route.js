@@ -88,6 +88,43 @@ productRoute.get("/:id", async (req, res) => {
   }
 });
 
+productRoute.patch("/update/:id", async (req, res) => {
+  const productId = req.params.id;
+  const payload = req.body;
+
+  try {
+    const updateProduct = await ProductModel.findByIdAndUpdate(productId,payload)
+
+    if(!updateProduct){
+      res.status(400).send({ error: 'Product not found' });
+    }
+
+    const sendUpdatedProduct = await updateProduct.save();
+    res.status(200).send({msg: 'Product Successfully Updated'})
+    
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({msg: "Something went Wrong"})
+  }
+});
+
+productRoute.delete("/delete/:id", async (req, res) => {
+  const productId = req.params.id;
+
+  try {
+    const deleteProduct = await ProductModel.findByIdAndDelete(productId)
+
+    if(!deleteProduct){
+      res.status(400).send({ error: 'Product not Deleted' });
+    }
+    res.status(200).send({msg: 'Product Successfully Deleted'})
+
+  } catch (error) {
+    console.log(error);
+    res.status(400).send({msg: "Something went Wrong"})
+  }
+});
+
 module.exports = {
   productRoute,
 };
