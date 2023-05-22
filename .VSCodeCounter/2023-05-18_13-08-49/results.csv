@@ -1,0 +1,20 @@
+"filename", "language", "Markdown", "JavaScript", "JSON", "comment", "blank", "total"
+"d:\CW- All units\eBuzz- backend server\README.md", "Markdown", 4, 0, 0, 0, 3, 7
+"d:\CW- All units\eBuzz- backend server\connection.js", "JavaScript", 0, 6, 0, 1, 6, 13
+"d:\CW- All units\eBuzz- backend server\index.js", "JavaScript", 0, 32, 0, 11, 15, 58
+"d:\CW- All units\eBuzz- backend server\middlewares\authenticationeMiddleware.js", "JavaScript", 0, 24, 0, 17, 6, 47
+"d:\CW- All units\eBuzz- backend server\models\admin.model.js", "JavaScript", 0, 14, 0, 2, 6, 22
+"d:\CW- All units\eBuzz- backend server\models\cart.model.js", "JavaScript", 0, 29, 0, 2, 7, 38
+"d:\CW- All units\eBuzz- backend server\models\order.model.js", "JavaScript", 0, 37, 0, 2, 7, 46
+"d:\CW- All units\eBuzz- backend server\models\product.model.js", "JavaScript", 0, 26, 0, 2, 8, 36
+"d:\CW- All units\eBuzz- backend server\models\user.model.js", "JavaScript", 0, 14, 0, 2, 8, 24
+"d:\CW- All units\eBuzz- backend server\models\wishlist.model.js", "JavaScript", 0, 0, 0, 0, 1, 1
+"d:\CW- All units\eBuzz- backend server\package-lock.json", "JSON", 0, 0, 7750, 0, 1, 7751
+"d:\CW- All units\eBuzz- backend server\package.json", "JSON", 0, 0, 24, 0, 1, 25
+"d:\CW- All units\eBuzz- backend server\routes\admin.route.js", "JavaScript", 0, 51, 0, 10, 16, 77
+"d:\CW- All units\eBuzz- backend server\routes\cart.route.js", "JavaScript", 0, 126, 0, 18, 8, 152
+"d:\CW- All units\eBuzz- backend server\routes\order.route.js", "JavaScript", 0, 35, 0, 4, 8, 47
+"d:\CW- All units\eBuzz- backend server\routes\product.route.js", "JavaScript", 0, 62, 0, 6, 9, 77
+"d:\CW- All units\eBuzz- backend server\routes\user.route.js", "JavaScript", 0, 51, 0, 10, 16, 77
+"d:\CW- All units\eBuzz- backend server\routes\wishlist.route.js", "JavaScript", 0, 0, 0, 0, 1, 1
+"Total", "-", 4, 507, 7774, 87, 127, 8499

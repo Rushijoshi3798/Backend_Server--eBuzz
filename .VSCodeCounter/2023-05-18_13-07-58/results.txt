@@ -1,0 +1,48 @@
+Date : 2023-05-18 13:07:58
+Directory : d:\CW- All units\eBuzz- backend server
+Total : 18 files,  8285 codes, 87 comments, 127 blanks, all 8499 lines
+
+Languages
++------------+------------+------------+------------+------------+------------+
+| language   | files      | code       | comment    | blank      | total      |
++------------+------------+------------+------------+------------+------------+
+| JSON       |          2 |      7,774 |          0 |          2 |      7,776 |
+| JavaScript |         15 |        507 |         87 |        122 |        716 |
+| Markdown   |          1 |          4 |          0 |          3 |          7 |
++------------+------------+------------+------------+------------+------------+
+
+Directories
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| path                                                                            | files      | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| .                                                                               |         18 |      8,285 |         87 |        127 |      8,499 |
+| . (Files)                                                                       |          5 |      7,816 |         12 |         26 |      7,854 |
+| middlewares                                                                     |          1 |         24 |         17 |          6 |         47 |
+| models                                                                          |          6 |        120 |         10 |         37 |        167 |
+| routes                                                                          |          6 |        325 |         48 |         58 |        431 |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+
+Files
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| filename                                                                        | language   | code       | comment    | blank      | total      |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
+| d:\CW- All units\eBuzz- backend server\README.md                                | Markdown   |          4 |          0 |          3 |          7 |
+| d:\CW- All units\eBuzz- backend server\connection.js                            | JavaScript |          6 |          1 |          6 |         13 |
+| d:\CW- All units\eBuzz- backend server\index.js                                 | JavaScript |         32 |         11 |         15 |         58 |
+| d:\CW- All units\eBuzz- backend server\middlewares\authenticationeMiddleware.js | JavaScript |         24 |         17 |          6 |         47 |
+| d:\CW- All units\eBuzz- backend server\models\admin.model.js                    | JavaScript |         14 |          2 |          6 |         22 |
+| d:\CW- All units\eBuzz- backend server\models\cart.model.js                     | JavaScript |         29 |          2 |          7 |         38 |
+| d:\CW- All units\eBuzz- backend server\models\order.model.js                    | JavaScript |         37 |          2 |          7 |         46 |
+| d:\CW- All units\eBuzz- backend server\models\product.model.js                  | JavaScript |         26 |          2 |          8 |         36 |
+| d:\CW- All units\eBuzz- backend server\models\user.model.js                     | JavaScript |         14 |          2 |          8 |         24 |
+| d:\CW- All units\eBuzz- backend server\models\wishlist.model.js                 | JavaScript |          0 |          0 |          1 |          1 |
+| d:\CW- All units\eBuzz- backend server\package-lock.json                        | JSON       |      7,750 |          0 |          1 |      7,751 |
+| d:\CW- All units\eBuzz- backend server\package.json                             | JSON       |         24 |          0 |          1 |         25 |
+| d:\CW- All units\eBuzz- backend server\routes\admin.route.js                    | JavaScript |         51 |         10 |         16 |         77 |
+| d:\CW- All units\eBuzz- backend server\routes\cart.route.js                     | JavaScript |        126 |         18 |          8 |        152 |
+| d:\CW- All units\eBuzz- backend server\routes\order.route.js                    | JavaScript |         35 |          4 |          8 |         47 |
+| d:\CW- All units\eBuzz- backend server\routes\product.route.js                  | JavaScript |         62 |          6 |          9 |         77 |
+| d:\CW- All units\eBuzz- backend server\routes\user.route.js                     | JavaScript |         51 |         10 |         16 |         77 |
+| d:\CW- All units\eBuzz- backend server\routes\wishlist.route.js                 | JavaScript |          0 |          0 |          1 |          1 |
+| Total                                                                           |            |      8,285 |         87 |        127 |      8,499 |
++---------------------------------------------------------------------------------+------------+------------+------------+------------+------------+
