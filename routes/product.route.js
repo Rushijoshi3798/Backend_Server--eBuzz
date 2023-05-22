@@ -40,7 +40,7 @@ productRoute.post("/add", async (req, res) => {
       rating: Math.floor(Math.random() * 5) + 1,
       rating_count: Math.floor(Math.random() * 50) + 5,
     });
-    console.log("Addproduct", AddProduct);
+    console.log("Addproduct",AddProduct);
     const saveProduct = await AddProduct.save();
     res.status(200).send({
       success: true,
@@ -48,7 +48,7 @@ productRoute.post("/add", async (req, res) => {
       data: saveProduct,
     });
   } catch (err) {
-    res.status(400).send({ success: false, message: "adfaff", err });
+    res.status(400).send({ success: false, message: "adfaff",err });
   }
 });
 
@@ -56,20 +56,32 @@ productRoute.get("/", async (req, res) => {
   console.log("products");
   console.log("called");
 
-  const query = req.query || 0;
+  const query = req.query;
   console.log("query", query);
   // const {sort} = req.query
   try {
     // const sortOption =    sort ? { price: sort === 'asc' ? 1 : -1 } : {};
-    if (query) {
-      products = await ProductModel.findOne({ _id: query });
-    } else {
-      products = await ProductModel.find(query);
-    }
-
+    const products = await ProductModel.find(query);
     res.status(200).send({
       TotalCount: products.length,
-      products,
+      products
+    });
+  } catch (error) {
+    res.status(400).send({ msg: "Something went wrong! " });
+  }
+});
+
+productRoute.get("/:id", async (req, res) => {
+  console.log("products");
+  console.log("called");
+  const id = req.params.id;
+  // const {sort} = req.query
+  try {
+    // const sortOption =    sort ? { price: sort === 'asc' ? 1 : -1 } : {};
+    const products = await ProductModel.findOne({_id: id });
+    res.status(200).send({
+      TotalCount: products.length,
+      products
     });
   } catch (error) {
     res.status(400).send({ msg: "Something went wrong! " });
