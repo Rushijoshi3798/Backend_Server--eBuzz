@@ -64,7 +64,7 @@ productRoute.get("/", async (req, res) => {
     if (query) {
       products = await ProductModel.findOne({ _id: query });
     } else {
-      products = await ProductModel.find();
+      products = await ProductModel.find(query);
     }
 
     res.status(200).send({
