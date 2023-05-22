@@ -21,7 +21,10 @@ productRoute.post("/add", async (req, res) => {
     discounted_price,
     discount,
     description,
+    inStock,
     size,
+    rating,
+    rating_count
   } = req.body;
 
   try {
@@ -29,16 +32,16 @@ productRoute.post("/add", async (req, res) => {
       category,
       product,
       title,
-      images: images.split(" "),
+      images,
       brand,
-      strike_price: +strike_price,
-      discounted_price: +discounted_price,
-      discount: +discount,
-      inStock: true,
+      strike_price,
+      discounted_price,
+      discount,
+      inStock,
       description,
-      size: size.split(" "),
-      rating: Math.floor(Math.random() * 5) + 1,
-      rating_count: Math.floor(Math.random() * 50) + 5,
+      size,
+      rating_count,
+      rating
     });
     console.log("Addproduct",AddProduct);
     const saveProduct = await AddProduct.save();
@@ -48,6 +51,7 @@ productRoute.post("/add", async (req, res) => {
       data: saveProduct,
     });
   } catch (err) {
+    console.log(err);
     res.status(400).send({ success: false, message: "adfaff",err });
   }
 });
