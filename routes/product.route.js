@@ -69,7 +69,7 @@ productRoute.get("/", async (req, res) => {
     const sortOption = sort ? { discounted_price: sort === 'asc' ? 1 : -1 } : {};
 
     try {
-      const products = await ProductModel.find().sort(sortOption);
+      const products = await ProductModel.find(query).sort(sortOption);
       res.status(200).send({
         TotalCount: products.length,
         products,
