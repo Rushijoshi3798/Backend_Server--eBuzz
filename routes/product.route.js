@@ -84,9 +84,13 @@ productRoute.get("/", async (req, res) => {
     try {
       // const sortOption = sort ? { price: sort === 'asc' ? 1 : -1 } : {};
       const products = await ProductModel.find(query);
+      const product = await ProductModel.updateMany(
+        { category: "kids" },
+        { product: "kids" }
+      );
       res.status(200).send({
         TotalCount: products.length,
-        products
+        products, product
       });
     } catch (error) {
       res.status(400).send({ msg: "Something went wrong! " });
