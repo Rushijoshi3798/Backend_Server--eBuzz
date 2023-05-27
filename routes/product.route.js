@@ -66,10 +66,12 @@ productRoute.get("/", async (req, res) => {
   const { sort, order } = req.query;
 
   if (sort && order) {
-    const sortOption = sort ? { discounted_price: sort === 'asc' ? 1 : -1 } : {};
+    const sortOption = sort
+      ? { discounted_price: sort === "asc" ? 1 : -1 }
+      : {};
 
     try {
-      const products = await ProductModel.find(query).sort(sortOption);
+      const products = await ProductModel.find().sort(sortOption);
       res.status(200).send({
         TotalCount: products.length,
         products,
@@ -82,9 +84,13 @@ productRoute.get("/", async (req, res) => {
     try {
       // const sortOption = sort ? { price: sort === 'asc' ? 1 : -1 } : {};
       const products = await ProductModel.find(query);
+      const product = await ProductModel.updateMany(
+        { category: "men" },
+        { category: "cloth" }
+      );
       res.status(200).send({
         TotalCount: products.length,
-        products,
+        products, product
       });
     } catch (error) {
       res.status(400).send({ msg: "Something went wrong! " });
