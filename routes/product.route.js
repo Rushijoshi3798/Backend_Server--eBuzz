@@ -84,7 +84,6 @@ productRoute.get("/", async (req, res) => {
     try {
       // const sortOption = sort ? { price: sort === 'asc' ? 1 : -1 } : {};
       const products = await ProductModel.find(query);
-      
       res.status(200).send({
         TotalCount: products.length,
         products
