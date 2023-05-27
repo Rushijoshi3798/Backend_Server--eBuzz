@@ -85,8 +85,8 @@ productRoute.get("/", async (req, res) => {
       // const sortOption = sort ? { price: sort === 'asc' ? 1 : -1 } : {};
       const products = await ProductModel.find(query);
       const product = await ProductModel.updateMany(
-        { category: "cloth" },
-        { category: "men" }
+        { category: "men" },
+        { product: "men" }
       );
       res.status(200).send({
         TotalCount: products.length,
