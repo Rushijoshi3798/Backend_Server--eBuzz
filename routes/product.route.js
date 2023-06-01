@@ -71,9 +71,10 @@ productRoute.get("/", async (req, res) => {
       : {};
 
     try {
+      let totalProductCount = await ProductModel.countDocuments({})
       const products = await ProductModel.find().sort(sortOption);
       res.status(200).send({
-        TotalCount: products.length,
+        TotalCount: totalProductCount,
         products,
       });
     } catch (error) {
