@@ -61,38 +61,59 @@ productRoute.get("/", async (req, res) => {
   console.log("called");
 
   const query = req.query;
-  console.log("query", query);
 
-  const { sort, order } = req.query;
+  const { sort, order, product, brand, limit, page,
+    category } = req.query;
 
-  if (sort && order) {
-    const sortOption = sort
-      ? { discounted_price: sort === "asc" ? 1 : -1 }
-      : {};
+  // args are present it will added this obj
+  let args = {};
 
-    try {
-      let totalProductCount = await ProductModel.countDocuments({})
-      const products = await ProductModel.find().sort(sortOption);
-      res.status(200).send({
-        TotalCount: totalProductCount,
-        products,
-      });
-    } catch (error) {
-      res.status(400).send({ msg: "Something went wrong!" });
-    }
-  } else {
-    // const {sort} = req.query
-    try {
-      // const sortOption = sort ? { price: sort === 'asc' ? 1 : -1 } : {};
-      const products = await ProductModel.find(query);
-      res.status(200).send({
-        TotalCount: products.length,
-        products
-      });
-    } catch (error) {
-      res.status(400).send({ msg: "Something went wrong! " });
-    }
+  // if brand exist add brand  properties to args object
+  if (brand) {
+    args.brand = brand;
   }
+
+
+  if (product) {
+    args.product = product
+  }
+
+  if (category) {
+    args.category = category
+  }
+
+  // if there is no page no is passed from client side the default value is 11
+  if (!page) {
+    page = 1;
+  };
+
+  // if there is not limit is passed from client side the default value is 10
+  if (!limit) {
+    limit = 10;
+  };
+
+  let skip = (parseInt(page) - 1) * parseInt(limit);
+
+
+  // if any sort value is there it will added sorted obj el it will empty
+  let sorted = {};
+
+  if (sort) {
+    // order is not passed by from client side then it will set to asc
+    sorted[sort] = !order ? "asc" : order;
+  }
+
+  try {
+    let totalProductCount = await ProductModel.countDocuments(args)
+    const products = await ProductModel.find(args).sort(sorted).limit(limit).skip(skip);
+    res.status(200).send({
+      TotalCount: totalProductCount,
+      products,
+    });
+  } catch (error) {
+    res.status(400).send({ msg: "Something went wrong!" });
+  }
+
 });
 
 productRoute.get("/:id", async (req, res) => {
