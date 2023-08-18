@@ -82,17 +82,21 @@ productRoute.get("/", async (req, res) => {
     args.category = category
   }
 
-  // if there is no page no is passed from client side the default value is 11
-  if (!page) {
-    page = 1;
-  };
+  // if there is no page no is passed from client side the default value is 1
+  let defaultPage = 1;
+  let pageValue = page ? parseInt(page) : defaultPage;
+  // if (!page) {
+  //   page = 1;
+  // }
 
   // if there is not limit is passed from client side the default value is 10
-  if (!limit) {
-    limit = 10;
-  };
+  let defaultLimit = 1;
+  let limitValue = limit ? parseInt(limit) : defaultLimit;
+  // if (!limit) {
+  //   limit = 10;
+  // };
 
-  let skip = (parseInt(page) - 1) * parseInt(limit);
+  let skip = (parseInt(pageValue) - 1) * parseInt(limitValue);
 
 
   // if any sort value is there it will added sorted obj el it will empty
