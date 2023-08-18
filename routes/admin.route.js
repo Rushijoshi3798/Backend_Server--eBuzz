@@ -49,7 +49,7 @@ adminRoute.post("/login",async(req,res)=>{
             bcrypt.compare(Password,findUser.Password,(err,result)=>{
 
                if(result){
-                const token = jwt.sign({"userId":findUser._id},"key",{ expiresIn: '1h' }); //,{ expiresIn: '1h' }
+                const token = jwt.sign({"userId":findUser._id},"key",{ expiresIn: '24h' }); //,{ expiresIn: '24h' }
                 // console.log("login",findUser._id);
                 // console.log(token);
                 // req.session.token=token
