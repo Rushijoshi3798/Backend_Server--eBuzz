@@ -57,7 +57,7 @@ productRoute.post("/add", async (req, res) => {
 });
 
 productRoute.get("/", async (req, res) => {
-  console.log("products");
+  console.log("products", req.query);
   console.log("called");
 
   const query = req.query;
